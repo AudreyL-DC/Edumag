@@ -17,102 +17,100 @@ const server = browserSync.create();
 const PRODUCTION = yargs.argv.prod;
 
 const paths = {
-	styles: {
-		src: ['src/scss/main.scss'],
-		dest: 'dist/css'
-	},
-	images: {
-		src: 'src/images/**/*.{jpg,jpeg,png,svg,gif,ico}',
-		dest: 'dist/images'
-	},
-	scrips: {
-		src: ['src/js/main.js'],
-		dest: 'dist/js'
-	},
-	misc: {
-		src: ['src/**/*','!src/{images,js,scss}', '!src/{images,js,scss}/**/*'],
-		dest: 'dist'
-	},
+    styles: {
+        src: ['src/scss/main.scss'],
+        dest: 'dist/css'
+    },
+    images: {
+        src: 'src/images/**/*.{jpg,jpeg,png,svg,gif,ico}',
+        dest: 'dist/images'
+    },
+    scrips: {
+        src: ['src/js/main.js'],
+        dest: 'dist/js'
+    },
+    misc: {
+        src: ['src/**/*', '!src/{images,js,scss}', '!src/{images,js,scss}/**/*'],
+        dest: 'dist'
+    },
 }
 
 export const serve = (done) => {
-	server.init({
-    server: {
-      baseDir: "./"
-    },
-    port: 3000
-  });
-	done();
+    server.init({
+        server: {
+            baseDir: "./dist"
+        },
+        port: 3000
+    });
+    done();
 }
 
 export const reload = (done) => {
-	server.reload();
-	done();
+    server.reload();
+    done();
 }
 
 export const clean = () => {
-	return del(['dist']);
+    return del(['dist']);
 }
 
 export const styles = (done) => {
-	return gulp.src(paths.styles.src)
-		.pipe(gulpif(!PRODUCTION, sourcemaps.init()))
-		.pipe(sass().on('error',sass.logError))
-    .pipe(gulpif(PRODUCTION, postcss([ autoprefixer ])))
-		.pipe(gulpif(PRODUCTION, cleanCss({compatibility:'ie8'})))
-		.pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-		.pipe(gulp.dest(paths.styles.dest))
-		.pipe(server.stream());
+    return gulp.src(paths.styles.src)
+        .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulpif(PRODUCTION, postcss([autoprefixer])))
+        .pipe(gulpif(PRODUCTION, cleanCss({ compatibility: 'ie8' })))
+        .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
+        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(server.stream());
 }
 
 export const images = () => {
-	return gulp.src(paths.images.src)
-		.pipe(gulpif(PRODUCTION, imagemin()))
-		.pipe(gulp.dest(paths.images.dest));
+    return gulp.src(paths.images.src)
+        .pipe(gulpif(PRODUCTION, imagemin()))
+        .pipe(gulp.dest(paths.images.dest));
 }
 
 export const watch = () => {
-	gulp.watch('src/scss/**/*.scss', styles);
-	gulp.watch('src/js/**/*.js', gulp.series(scripts, reload));
-	gulp.watch('**/*.php', reload);
-	gulp.watch(paths.images.src, gulp.series(images, reload));
-	gulp.watch(paths.misc.src, gulp.series(copy, reload));
-} 
+    gulp.watch('src/scss/**/*.scss', styles);
+    gulp.watch('src/js/**/*.js', gulp.series(scripts, reload));
+    gulp.watch('**/*.php', reload);
+    gulp.watch(paths.images.src, gulp.series(images, reload));
+    gulp.watch(paths.misc.src, gulp.series(copy, reload));
+}
 
 
 export const copy = () => {
-	return gulp.src(paths.misc.src)
-		.pipe(gulp.dest(paths.misc.dest));
+    return gulp.src(paths.misc.src)
+        .pipe(gulp.dest(paths.misc.dest));
 }
 
 export const scripts = () => {
-	return gulp.src(paths.scrips.src)
-	.pipe(named())
-	.pipe(webpack({
-		module: {
-			rules: [
-				{
-					test: /\.js$/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							presets: ['@babel/preset-env']
-						}
-					}
-				}
-			]
-		},
-		output: {
-			filename: '[name].js'
-		},
-		externals: {
-			jquery: 'jQuery'
-    },
-    mode: PRODUCTION ? 'production' : 'development',
-		devtool: !PRODUCTION ? 'inline-source-map' : false
-	}))
-	.pipe(gulpif(PRODUCTION, uglify()))
-	.pipe(gulp.dest(paths.scrips.dest));
+    return gulp.src(paths.scrips.src)
+        .pipe(named())
+        .pipe(webpack({
+            module: {
+                rules: [{
+                    test: /\.js$/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env']
+                        }
+                    }
+                }]
+            },
+            output: {
+                filename: '[name].js'
+            },
+            externals: {
+                jquery: 'jQuery'
+            },
+            mode: PRODUCTION ? 'production' : 'development',
+            devtool: !PRODUCTION ? 'inline-source-map' : false
+        }))
+        .pipe(gulpif(PRODUCTION, uglify()))
+        .pipe(gulp.dest(paths.scrips.dest));
 }
 
 export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);
