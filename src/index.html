@@ -1,21 +1,335 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="...">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>push arthur</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BreizhSurf</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+
 </head>
 
-<body>
+<body class="home">
 
-    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
+    <nav class="main-navbar navbar sticky-top navbar-expand-lg navbar-light bg-white">
 
-    <h1>Bonjour</h1>
+        <a class="navbar-brand" href="index.html"><img class="navbar-brand-logo" src="images/logo.svg" alt="Logo Breizhsurf"></a>
 
-    <script src="./js/jquery-3.5.0.min.js"></script>
-    <script src="./js/scripts.js"></script>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav main-menu mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Spots</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Actualités</a>
+                </li>
+            </ul>
+
+            <ul id="menu-social-menu" class="navbar-nav social-menu">
+                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-77" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-77 nav-item"><a title="Facebook" href="#" class="nav-link">Facebook</a></li>
+                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-78" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-78 nav-item"><a title="Instagram" href="#" class="nav-link">Instagram</a></li>
+                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-79" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-79 nav-item"><a title="Twitter" href="#" class="nav-link">Twitter</a></li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <main>
+
+        <article class="post-5 page type-page status-publish hentry">
+
+            <header class="entry-header main-header py-5">
+
+                <div class="container">
+
+                    <h1 class="page-title entry-title">BreizhSurf trouve pour vous les plus belles vagues de Bretagne</h1>
+
+                    <a href="http://localhost:8888/cours/breizhsurf/spots/" class="btn btn-outline-light mt-4">Tous les spots</a>
+
+                </div>
+
+            </header>
+
+            <div class="container py-5">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-md-8">
+                        <div class="entry-content">
+
+                            <h2>Les meilleurs spots de Bretagne</h2>
+
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- .row -->
+
+            </div>
+            <!-- .container -->
+
+        </article>
+
+    </main>
+
+    <section class="front-spots container">
+
+        <div class="front-spots_grid">
+
+            <article class="card-spot post-62 spot type-spot status-publish has-post-thumbnail hentry departement-finistere">
+
+                <figure class="card-figure mb-0">
+                    <a href="#" title="Lire la suite">
+                        <img src="images/Pointe_de_la_Torche_02.jpg" alt="" class="img-fluid">
+                        <h3 class="entry-title">La Torche - Audierne</h3>
+                    </a>
+                </figure>
+
+            </article>
+
+
+            <article class="card-spot post-60 spot type-spot status-publish has-post-thumbnail hentry departement-morbihan">
+
+                <figure class="card-figure mb-0">
+                    <a href="#" title="Lire la suite">
+                        <img src="images/Donnant_panoramio.jpg" alt="" class="img-fluid">
+                        <h3 class="entry-title">Donnant - Belle-île</h3>
+                    </a>
+                </figure>
+
+            </article>
+
+
+            <article class="card-spot post-64 spot type-spot status-publish has-post-thumbnail hentry departement-ille-et-vilaine">
+
+                <figure class="card-figure mb-0">
+                    <a href="#" title="Lire la suite">
+                        <img src="images/Saint-Lunaire._Longchamps81.jpg" alt="" class="img-fluid">
+                        <h3 class="entry-title">Garde Guérin - Saint-Lunaire</h3>
+                    </a>
+                </figure>
+
+            </article>
+
+
+            <article class="card-spot post-56 spot type-spot status-publish has-post-thumbnail hentry departement-morbihan">
+
+                <figure class="card-figure mb-0">
+                    <a href="#" title="Lire la suite">
+                        <img src="images/Quiberon.jpg" alt="" class="img-fluid">
+                        <h3 class="entry-title">Port Bara - Quiberon</h3>
+                    </a>
+                </figure>
+
+            </article>
+
+
+            <article class="card-spot post-61 spot type-spot status-publish has-post-thumbnail hentry departement-finistere">
+
+                <figure class="card-figure mb-0">
+                    <a href="#" title="Lire la suite">
+                        <img src="images/La_Palue-Presquile_de_CROZON.jpg" alt="" class="img-fluid">
+                        <h3 class="entry-title">La palue - Crozon</h3>
+                    </a>
+                </figure>
+
+            </article>
+
+        </div>
+        <!-- .front-spots_grid -->
+
+        <div class="text-center">
+            <a href="#" class="btn btn-outline-primary my-5">Tous les spots</a>
+        </div>
+
+    </section>
+    <!-- .front-spots -->
+
+    <section class="sticky-post container my-5 pb-5">
+
+
+        <article class="sticky-post_article row post-13 post type-post status-publish format-standard has-post-thumbnail hentry category-stages">
+
+            <figure class="card-figure mb-0 col-sm-10 col-md-6 offset-sm-1">
+                <a href="#" title="Lire la suite">
+                    <img src="images/Surf_5933.jpg" alt="">
+                </a>
+            </figure>
+
+            <div class="sticky-post_content bg-white py-4 col-sm-10 offset-sm-1 col-md-4 offset-md-0">
+                <h2>À la une</h2>
+                <h3 class="h4"><a href="#">Quae qui non vident, nihil umquam magnum ac cognitione dignum amaverunt</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui ita affectus, beatum esse numquam probabis; Nihil enim hoc differt. Atqui&hellip;</p>
+                <div class="more-link"><a class="btn btn-outline-primary" href="#">Lire la suite</a></div>
+            </div>
+
+        </article>
+
+
+    </section>
+    <!-- .sticky-post -->
+
+    <section class="sidebar-lastnews bg-light py-5">
+
+        <div class="container">
+
+            <header class="sidebar-header d-flex flex-wrap justify-content-between align-items-center">
+                <h2 class="sidebar-title">Dernières actualités</h2>
+                <a href="" class="btn btn-outline-primary">Toutes les actualités</a>
+            </header>
+
+            <div class="carousel-news owl-carousel px-sm-4 mt-5">
+
+                <article class="card border-0">
+                    <figure class="card-figure mb-0">
+                        <a href="">
+                            <img src="images/Surfing_in_Capbreton1.jpg" class="card-img-top" alt="..."></a>
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title h4"><a href="">Lorem ipsum dolor sit amet</a></h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores stet clita kasd…</p>
+                        <div class="more-link"><a href="#" class="btn btn-outline-primary">Lire la suite</a></div>
+                    </div>
+                </article>
+
+                <article class="card border-0">
+                    <figure class="card-figure mb-0">
+                        <a href="">
+                            <img src="images/Surf_5933.jpg" class="card-img-top" alt="..."></a>
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title h4"><a href="">At vero eos et accusam et justo duo dolores et ea rebum</a> </h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores stet clita kasd…</p>
+                        <div class="more-link"><a href="#" class="btn btn-outline-primary">Lire la suite</a></div>
+                    </div>
+                </article>
+
+                <article class="card border-0">
+                    <figure class="card-figure mb-0">
+                        <a href="">
+                            <img src="images/surfer-surfing-huntington-travel-vacation-13e088-1024.jpg" class="card-img-top" alt="...">
+                        </a>
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title h4"><a href="">Sed diam nonumy eirmod tempor invidunt ut labore et dolore</a> </h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua…</p>
+                        <div class="more-link"><a href="#" class="btn btn-outline-primary">Lire la suite</a></div>
+                    </div>
+                </article>
+
+                <article class="card border-0">
+                    <figure class="card-figure mb-0">
+                        <a href="">
+                            <img src="images/thumb-1920-231946.jpg" class="card-img-top" alt="...">
+                        </a>
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title h4"><a href="">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a> </h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores stet clita kasd…</p>
+                        <div class="more-link"><a href="#" class="btn btn-outline-primary">Lire la suite</a></div>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="page-footer bg-dark text-white pt-5 pb-3">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="footer-col col-sm-12 col-lg-4 pb-3 pb-lg-0">
+                    <section class="widget nav_menu-2 widget_nav_menu">
+                        <h2 class="widget-title h3">Réseaux sociaux</h2>
+                        <div class="menu-social-menu-container">
+                            <ul id="menu-social-menu-1" class="menu">
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-77"><a href="#">Facebook</a></li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-78"><a href="#">Instagram</a></li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-79"><a href="#">Twitter</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="footer-col col-sm-6 col-lg-4 pb-3 pb-lg-0">
+                    <section class="widget recent-posts-3 widget_recent_entries">
+                        <h2 class="widget-title h3">Articles récents</h2>
+                        <ul>
+                            <li>
+                                <a href="#">Quid turpius quam sapientis</a>
+                            </li>
+                            <li>
+                                <a href="#">Quae qui non vident, nihil umquam magnum ac cognitione dignum amaverunt</a>
+                            </li>
+                            <li>
+                                <a href="#">Multoque hoc melius nos veriusque quam Stoici</a>
+                            </li>
+                            <li>
+                                <a href="#">Habent enim et bene longam</a>
+                            </li>
+                            <li>
+                                <a href="#">Ac nudus es tollit definitiones</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="footer-col col-sm-6 col-lg-4 pb-3 pb-lg-0">
+                    <section class="widget text-3 widget_text">
+                        <h2 class="widget-title h3">Sites Amis</h2>
+                        <div class="textwidget">
+                            <ul>
+                                <li><a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a></li>
+                                <li><a href="#">Sed diam nonumy eirmod tempor</a></li>
+                                <li><a href="#">Invidunt ut labore et dolore magna</a></li>
+                                <li><a href="#">At vero eos et accusam et justo duo dolores et ea rebum</a></li>
+                                <li><a href="#">Stet clita kasd gubergren</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+            <!-- .row -->
+
+            <nav class="nav-footer d-flex flex-wrap justify-content-center mt-3">
+                <p class="copyright mr-3">&copy; <a href="#">BreizhSurf 2020</a></p>
+                <div class="menu-menu-footer-container">
+                    <ul id="menu-menu-footer" class="nav">
+                        <li id="menu-item-94" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-94"><a href="#">Politique de confidentialité</a></li>
+                        <li id="menu-item-95" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95"><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 
 </body>
 
